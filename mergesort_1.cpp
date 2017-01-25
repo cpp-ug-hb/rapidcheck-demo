@@ -1,8 +1,5 @@
 #include <rapidcheck.h>
-#include <rapidcheck/state.h>
 
-#include <array>
-#include <cstdint>
 #include <algorithm>
 
 
