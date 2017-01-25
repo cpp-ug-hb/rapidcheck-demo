@@ -14,3 +14,4 @@ add_rapidcheck_executable(flat_map_1 flat_map_1.cpp)
 add_rapidcheck_executable(flat_map_2 flat_map_2.cpp)
 
 add_rapidcheck_executable(encoder_1 encoder_1.cpp)
+add_rapidcheck_executable(mergesort_1 mergesort_1.cpp)
