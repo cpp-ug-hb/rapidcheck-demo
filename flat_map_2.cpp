@@ -5,6 +5,7 @@
 #include <vector>
 #include <algorithm>
 
+
 template<typename T>
 class flat_set
 {
@@ -184,7 +185,7 @@ int main()
     rc::state::check(
           model,
           sut,
-          &rc::state::gen::execOneOf<InsertOne<int>, InsertMultiple<int>, Remove<int> >
+          rc::state::gen::execOneOfWithArgs<InsertOne<int>, InsertMultiple<int>, Remove<int> >()
     );
   });
 }
