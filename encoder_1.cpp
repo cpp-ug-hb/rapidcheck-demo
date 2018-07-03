@@ -22,11 +22,12 @@ rgb_uint8 encode_rgb(rgb_double const& rgb_d)
   result[1] = encode_uint8(rgb_d[1]);
   result[2] = encode_uint8(rgb_d[2]);
 
+  // return result;
 }
 
-
 double decode_uint8(uint8_t value) {
-  return double(value) / 255.0;
+  return double(value) / 256.0;
+  // return double(value) / 255.0;
 }
 
 rgb_double decode_rgb(rgb_uint8 const& rgb_u8)
@@ -57,10 +58,10 @@ int main()
 
 
   // demo break
-//  return 0;
+  return 0;
 
 
-  rc::check(
+ rc::check(
     "double can be encoded and decoded to the same value",
     [] (double value) {
 
@@ -76,7 +77,7 @@ int main()
 
 
   // demo break
-//  return 0;
+  return 0;
 
 
   rc::check(
@@ -95,16 +96,16 @@ int main()
     RC_LOG() << "encoded: " << std::uint16_t(encoded) << std::endl;
     RC_LOG() << "decoded: " << decoded << std::endl;
     RC_LOG() << "delta: " << delta << std::endl;
-    RC_LOG() << "eps: " << delta << std::endl;
+    RC_LOG() << "eps: " << eps << std::endl;
 
     RC_ASSERT(value == decoded);
-//    RC_ASSERT( delta < eps);
+   // RC_ASSERT( delta < eps);
 
   });
 
 
   // demo break
-  // rerun the previous test, plz
+  // rerun the previous test, please
   return 0;
 
 
