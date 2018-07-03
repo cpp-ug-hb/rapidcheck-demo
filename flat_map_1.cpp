@@ -13,14 +13,13 @@ class flat_set
     void insert(T value) {
       m_data.push_back(std::move(value));
       std::sort(begin(), end());
-//      m_data.erase(std::unique(begin(), end()), end());
-
     }
 
     template<typename Iter>
     void insert(Iter a, Iter b) {
       m_data.insert(m_data.end(), a, b);
       std::sort(begin(), end());
+      // m_data.erase(std::unique(begin(), end()), end());
     }
 
     void remove(T const& value) {
@@ -53,15 +52,15 @@ int main()
   rc::check([] (std::vector<int> data) {
 
     // fill the flat_map
-    flat_set<int> map;
-    map.insert(begin(data), end(data));
+    flat_set<int> testee;
+    testee.insert(begin(data), end(data));
 
     // fill a set for comparison
     std::set<int> expected(begin(data), end(data));
 
     // assert they are equal
-    RC_ASSERT(map.size() == expected.size());
-    RC_ASSERT(std::equal(begin(map), end(map), begin(expected)));
+    RC_ASSERT(testee.size() == expected.size());
+    RC_ASSERT(std::equal(begin(testee), end(testee), begin(expected)));
   });
 
   return 0;
